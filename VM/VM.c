@@ -17,8 +17,8 @@
 /* 16 bit word */
 typedef uint16_t u16;
 
-/* 16 bit 65536 memory blocks */
-#define MEMORY_MAX (1 << 16)
+/* 16 bit 8192 memory blocks */
+#define MEMORY_MAX (8192)
 
 /* memory */
 static u16 memory[MEMORY_MAX];
@@ -34,6 +34,7 @@ enum {
     R_R6,
     R_R7,
     R_PC,
+    R_IR,
     R_COND,
     R_COUNT
 };
@@ -56,7 +57,7 @@ enum {
     OP_LDI,    
     OP_STI,     
     OP_JMP,     
-    OP_RES,     /* reserved (don't use) */
+    OP_LDPTR,     /* load PTR */
     OP_LEA,     
     OP_TRAP     
 };
